@@ -1,0 +1,37 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.dielin44.inventory'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.dielin44.inventory'
+        minSdk 28
+        targetSdk 35
+        versionCode 1
+        versionName '1.0.0'
+    }
+    signingConfigs {
+        release {
+            if (System.getenv('INVENTORY_KEYSTORE')) {
+                storeFile file(System.getenv('INVENTORY_KEYSTORE'))
+                storePassword System.getenv('INVENTORY_STORE_PASSWORD')
+                keyAlias System.getenv('INVENTORY_KEY_ALIAS') ?: 'inventory'
+                keyPassword System.getenv('INVENTORY_KEY_PASSWORD') ?: System.getenv('INVENTORY_STORE_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+dependencies {
+    implementation 'androidx.webkit:webkit:1.12.1'
+    implementation 'androidx.core:core:1.15.0'
+}
