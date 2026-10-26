@@ -2,6 +2,8 @@
 
 Android 9 以上的離線財產清冊。清冊、照片、抬頭與格子設定保存在 App 內；不需登入、不會將清冊上傳到 GitHub。
 
+[下載 APK 安裝檔](https://github.com/dielin44/property-inventory-android/releases/download/v1.0.0/property-inventory-1.0.0.apk) · [版本與下載說明](https://github.com/dielin44/property-inventory-android/releases/tag/v1.0.0)
+
 ## 功能
 
 - 序號、名稱、照片、數量、備註；批量新增物品及自訂欄位。
